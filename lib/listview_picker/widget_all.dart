@@ -77,3 +77,45 @@ class DetailsNameWidget extends StatelessWidget {
     );
   }
 }
+class AddItemRow extends StatelessWidget {
+  const AddItemRow({super.key, required this.title, required this.controller, this.keyboardtype, this.validator});
+  final String title;
+  final TextEditingController controller;
+  final TextInputType? keyboardtype;
+  final FormFieldValidator? validator;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Text(
+            "${title}:",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(width: 10),
+        Expanded(
+          flex: 4,
+          child: TextFormField(
+            keyboardType: keyboardtype,
+            controller: controller,
+            cursorHeight: 20,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              fillColor: Colors.white,
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            validator: validator,
+          ),
+        ),
+      ],
+    );
+  }
+}
+

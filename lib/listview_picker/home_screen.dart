@@ -24,6 +24,33 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w500,
           ),
         ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(60),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+            child: SizedBox(
+              height: 45,
+              child: TextField(
+                cursorColor: Colors.blue,
+                cursorHeight: 20,
+                decoration: InputDecoration(
+                  hintText: "Search here",
+                  prefixIcon: Icon(Icons.search, color: Colors.blue),
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 5,
+                  ),
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
@@ -60,6 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: () {
+
+        },
+        child: Icon(Icons.add, color: Colors.white, size: 32),
       ),
     );
   }
