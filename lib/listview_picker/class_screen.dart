@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class Item {
   final String image;
   final String name;

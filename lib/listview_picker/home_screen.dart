@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled8/listview_picker/class_screen.dart';
 import 'package:untitled8/listview_picker/details_screen.dart';
+import 'package:untitled8/listview_picker/student_add.dart';
 import 'package:untitled8/listview_picker/widget_all.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -92,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         onPressed: () {
-
+          Navigator.push(context,MaterialPageRoute(builder: (c)=> StudentAdd()));
         },
         child: Icon(Icons.add, color: Colors.white, size: 32),
       ),

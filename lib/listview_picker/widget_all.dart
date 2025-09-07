@@ -32,10 +32,9 @@ class itemListCard extends StatelessWidget {
     );
   }
 }
+
 class DetailsNameWidget extends StatelessWidget {
-  const DetailsNameWidget({
-    super.key, required this.title, required this.name,
-  });
+  const DetailsNameWidget({super.key, required this.title, required this.name});
   final String title;
   final String name;
 
@@ -45,10 +44,7 @@ class DetailsNameWidget extends StatelessWidget {
       children: [
         Text(
           "$title:",
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         SizedBox(width: 5),
         Expanded(
@@ -58,7 +54,11 @@ class DetailsNameWidget extends StatelessWidget {
               enabled: false,
               decoration: InputDecoration(
                 hintText: "$name",
-                hintStyle: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                hintStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 5,
                   horizontal: 15,
@@ -77,12 +77,17 @@ class DetailsNameWidget extends StatelessWidget {
     );
   }
 }
+
 class AddItemRow extends StatelessWidget {
-  const AddItemRow({super.key, required this.title, required this.controller, this.keyboardtype, this.validator});
+  const AddItemRow({
+    super.key,
+    required this.title,
+    required this.controller,
+    this.keyboardtype,
+  });
   final String title;
   final TextEditingController controller;
   final TextInputType? keyboardtype;
-  final FormFieldValidator? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +103,7 @@ class AddItemRow extends StatelessWidget {
         SizedBox(width: 10),
         Expanded(
           flex: 4,
-          child: TextFormField(
+          child: TextField(
             keyboardType: keyboardtype,
             controller: controller,
             cursorHeight: 20,
@@ -111,11 +116,9 @@ class AddItemRow extends StatelessWidget {
                 borderSide: BorderSide.none,
               ),
             ),
-            validator: validator,
           ),
         ),
       ],
     );
   }
 }
-
